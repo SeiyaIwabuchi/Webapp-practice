@@ -10,6 +10,6 @@ public class StatusServlet extends HttpServlet{
 	throws ServletException, IOException{
 		status.Status status = new status.Status();
 		PrintWriter out = response.getWriter();
-		out.println(status.getResult());
+		out.println("your fortune is " + status.getResult());
 	}
 }
