@@ -9,4 +9,3 @@ INDEX VERSION 1.4+C:\Users\180453\Desktop\dev_lite\Webapp-practice\.metadata\.pl
 1974869002.index
 1835701627.index
 1718792115.index
-43933950.index

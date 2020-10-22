@@ -30,7 +30,6 @@ INDEX VERSION 1.131+C:\Users\180453\Desktop\dev_lite\Webapp-practice\.metadata\.
 4168772095.index
 3497302873.index
 2773294960.index
-885131986.index
 137769895.index
 605621736.index
 1091856863.index
