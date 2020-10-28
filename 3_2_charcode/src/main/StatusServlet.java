@@ -11,7 +11,6 @@ public class StatusServlet extends HttpServlet{
 		status.Status status = new status.Status();
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = response.getWriter();
-		out.println("your fortune is ‚ " +status.getResult());
-//		response.setContentType("text/html;charset=Shift-JIS");
+		out.println("your fortune is " +status.getResult());
 	}
 }
