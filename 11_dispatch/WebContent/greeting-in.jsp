@@ -14,7 +14,7 @@ String errors = (String)request.getAttribute("errors");
 </head>
 <body>
 	<h2>■書籍在庫管理システム</h2>
-	<h2><%=errors %></h2>
+	<h2><%=errors==null?"":errors %></h2>
 	<h3>【書籍登録画面】</h3>
 	<form action="<%=request.getContextPath()%>/getresult" method="post">
 		<table>
@@ -41,21 +41,23 @@ String errors = (String)request.getAttribute("errors");
 			<tr>
 				<td></td>
 				<td>ジャンル</td>
-				<td><input type="checkbox" name="genre" value="0" />文芸 <input
-					type="checkbox" name="genre" value="1" />実用 <input type="checkbox"
-					name="genre" value="2" />ビジネス <input type="checkbox" name="genre"
-					value="3" />教養 <input type="checkbox" name="genre" value="4" />趣味</td>
+				<td><input type="checkbox" name="genre" value="0"   <%=bookInfo.genre[0]?"checked":"" %>/>文芸 
+				<input	type="checkbox" name="genre" value="1"   <%=bookInfo.genre[1]?"checked":"" %>/>実用
+				<input type="checkbox" name="genre"  value="2"  <%=bookInfo.genre[2]?"checked":"" %> />ビジネス 
+				<input type="checkbox" name="genre" 	value="3"   <%=bookInfo.genre[3]?"checked":"" %>/>教養 
+				<input type="checkbox" name="genre" value="4"   <%=bookInfo.genre[4]?"checked":"" %>/>趣味
+				</td>
 			</tr>
 			<tr>
 				<td></td>
 				<td>在庫</td>
-				<td><input type="radio" name="stock" value="1" checked />あり <input
-					type="radio" name="stock" value="0" />なし</td>
+				<td><input type="radio" name="stock" value="1" <%=bookInfo.stock?"checked":"" %> />あり <input
+					type="radio" name="stock" value="0"  <%=!bookInfo.stock?"checked":"" %>/>なし</td>
 			</tr>
 			<tr>
 				<td></td>
 				<td>備考</td>
-				<td><textarea name="remarks" cols="40" rows="4"></textarea></td>
+				<td><textarea name="remarks" cols="40" rows="4"><%=bookInfo.remarks %></textarea></td>
 			</tr>
 			<tr>
 				<td></td>

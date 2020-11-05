@@ -47,42 +47,13 @@ public class AddPageLogicServlet2 extends HttpServlet {
 			}
 		}
 		bookInfo.genre = genre_checked;
-		bookInfo.stock = request.getParameter("stock")=="0"?false:true;
+		bookInfo.stock = request.getParameter("stock").equals("0")?false:true;
 		bookInfo.validateResult = validateResult;
-		System.out.println(bookInfo);
 		if(validateResult) {
-			String stock_checked = request.getParameter("stock");
-			//表示
-			out.println("<html>");
-			out.println("<head>");
-			out.println(" <title>書籍登録確認画面</title>");
-			out.println("</head>");
-			out.println("<body>");
-			out.println(" <h2>■書籍在庫管理システム</h2>");
-			out.println(" <h3> 【書籍登録確認画面】</h3>");
-			out.println(" <form action=\"pages/addpage.jsp\">");
-			out.println(" <table>");
-			out.println(" <tr><td> </td><td>タイトル</td><td><input type=\"text\" name=\"title\" disabled=\"disabled\" value=\"" + request.getParameter(params.get(0)) + "\"/></td></tr>");
-			out.println(" <tr><td></td><td>著者</td><td><input type=\"text\" name=\"writer\" disabled=\"disabled\"  value=\"" + request.getParameter(params.get(1)) + "\"/></td></tr>");
-			out.println(" <tr><td></td><td>出版社</td><td><input type=\"text\" name=\"publisher\" disabled=\"disabled\"  value=\"" + request.getParameter(params.get(2)) + "\"/></td></tr>");
-			out.println(" <tr><td></td><td>価格</td><td><input type=\"text\" name=\"price\" disabled=\"disabled\"  value=\"" + request.getParameter(params.get(3)) + "\"/></td></tr>");
-			out.println(" <tr><td></td><td>ジャンル</td><td>");
-			out.println(" <input type=\"checkbox\" name=\"genre\" value=\"0\" "+(genre_checked[0]?"checked":"")+"  disabled=\"disabled\" />文芸");
-			out.println(" <input type=\"checkbox\" name=\"genre\" value=\"1\" "+(genre_checked[1]?"checked":"")+" disabled=\"disabled\" />実用");
-			out.println(" <input type=\"checkbox\" name=\"genre\" value=\"2\" "+(genre_checked[2]?"checked":"")+" disabled=\"disabled\" />ビジネス");
-			out.println(" <input type=\"checkbox\" name=\"genre\" value=\"3\" "+(genre_checked[3]?"checked":"")+" disabled=\"disabled\" />教養");
-			out.println(" <input type=\"checkbox\" name=\"genre\" value=\"4\" "+(genre_checked[4]?"checked":"")+" disabled=\"disabled\" />趣味</td></tr>");
-			out.println(" <tr><td></td><td>在庫</td><td>");
-			out.println(" <input type=\"radio\" name=\"stock\" value=\"1\" " + (stock_checked.equals("1")? "checked":"") + " disabled=\"disabled\" />あり");
-			out.println(" <input type=\"radio\" name=\"stock\" value=\"0\" " + (stock_checked.equals("0")? "checked":"") + " disabled=\"disabled\" />なし</td></tr>");
-			out.println(" <tr><td></td><td>備考</td><td><textarea name=\"remarks\" cols=\"40\" rows=\"4\" disabled=\"disabled\">" + request.getParameter(params.get(6)) + "</textarea></td></tr>");
-			out.println(" <tr><td></td><td height=\"30\"></td><td></td></tr>");
-			out.println(" <tr><td></td><td></td><td align=\"right\">");
-			out.println(" <input type=\"submit\" value=\"キャンセル\" />");
-			out.println(" </table>");
-			out.println(" </form>");
-			out.println("</body>");
-			out.println("</html>");
+			//フォワード
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/greeting-out.jsp");//画面遷移準備
+			request.setAttribute("bookInfo", bookInfo);//入力情報を次の画面に引き継ぐ
+			dispatcher.forward(request, response);
 		}else {
 			//out.println(validator.getErrors());
 			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/greeting-in.jsp");//画面遷移準備
