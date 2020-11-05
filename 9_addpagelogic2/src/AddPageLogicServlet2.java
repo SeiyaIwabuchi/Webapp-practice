@@ -38,7 +38,7 @@ public class AddPageLogicServlet2 extends HttpServlet {
 		out.println("<body>");
 		out.println(" <h2>■書籍在庫管理システム</h2>");
 		out.println(" <h3> 【書籍登録確認画面】</h3>");
-		out.println(" <form action=\"pages/addpage.jsp\">");
+		out.println(" <form action=\"greeting-in.jsp\">");
 		out.println(" <table>");
 		out.println(" <tr><td> </td><td>タイトル</td><td><input type=\"text\" name=\"title\" disabled=\"disabled\" value=\"" + request.getParameter(params.get(0)) + "\"/></td></tr>");
 		out.println(" <tr><td></td><td>著者</td><td><input type=\"text\" name=\"writer\" disabled=\"disabled\"  value=\"" + request.getParameter(params.get(1)) + "\"/></td></tr>");

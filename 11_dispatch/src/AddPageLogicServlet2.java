@@ -85,9 +85,9 @@ public class AddPageLogicServlet2 extends HttpServlet {
 			out.println("</html>");
 		}else {
 			//out.println(validator.getErrors());
-			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/greeting-in.jsp");
-			request.setAttribute("bookInfo", bookInfo);
-			request.setAttribute("errors", validator.getErrors().toString());
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/greeting-in.jsp");//‰æ–Ê‘JˆÚ€”õ
+			request.setAttribute("bookInfo", bookInfo);//“ü—Íî•ñ‚ğŸ‚Ì‰æ–Ê‚Éˆø‚«Œp‚®
+			request.setAttribute("errors", validator.getErrors().toString());//ƒGƒ‰[•\¦‚àˆø‚«Œp‚®
 			dispatcher.forward(request, response);
 		}
 	}
