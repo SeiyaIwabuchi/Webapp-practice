@@ -57,7 +57,7 @@ String errors = (String)request.getAttribute("errors");
 			<tr>
 				<td></td>
 				<td>備考</td>
-				<td><textarea name="remarks" cols="40" rows="4"><%=bookInfo.remarks %></textarea></td>
+				<td><textarea name="remarks" cols="40" rows="4"><%=bookInfo.remarks==null?"":bookInfo.remarks %></textarea></td>
 			</tr>
 			<tr>
 				<td></td>
