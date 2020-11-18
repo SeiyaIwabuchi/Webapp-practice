@@ -1,6 +1,6 @@
 package dataClasses;
 
-public class BookInformation {
+public class BookBean {
 	private String title="";
 	private String writer="";
 	private String publisher="";

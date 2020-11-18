@@ -29,7 +29,7 @@ public class AddPageLogicServlet2 extends HttpServlet {
 		boolean validateResult = validator.requiereCheck(params); //パラメータ数チェック
 		for(String paramName : params) validateResult = validator.requiereCheck(paramName, request.getParameterValues(paramName)) && validateResult;
 		//データ格納
-		dataClasses.BookInformation bookInfo = new dataClasses.BookInformation();
+		dataClasses.BookBean bookInfo = new dataClasses.BookBean();
 		bookInfo.setTitle(request.getParameter("title"));
 		bookInfo.setWriter(request.getParameter("writer"));
 		bookInfo.setPublisher(request.getParameter("publisher"));
