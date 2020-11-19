@@ -1,10 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="dataClasses.BookBean" %>
+<%@ page import="bean.BookBean" %>
 <%
-	BookBean bookInfo = (BookBean)request.getAttribute("bookInfo");
+BookBean bookInfo = (BookBean)request.getAttribute("bookInfo");
 if(bookInfo == null) bookInfo = new BookBean();
 String errors = (String)request.getAttribute("errors");
+String[] checkbox_checked = {"","","","",""};
+if(bookInfo.getGenreList() != null){
+	for(String s : bookInfo.getGenreList().toArray(new String[bookInfo.getGenreList().size()])){
+		checkbox_checked[Integer.parseInt(s)] = "checked";
+	}
+}
 %>
 <!DOCTYPE html>
 <html>
@@ -21,31 +27,31 @@ String errors = (String)request.getAttribute("errors");
 			<tr>
 				<td></td>
 				<td>タイトル</td>
-				<td><input type="text" name="title"  value="<%=bookInfo.getTitle()%>"/></td>
+				<td><input type="text" name="title"  value="<%=bookInfo.getTitle()==null?"":bookInfo.getTitle()%>"/></td>
 			</tr>
 			<tr>
 				<td></td>
 				<td>著者</td>
-				<td><input type="text" name="writer"   value="<%=bookInfo.getWriter() %>"/></td>
+				<td><input type="text" name="writer"   value="<%=bookInfo.getWritter()==null?"":bookInfo.getWritter() %>"/></td>
 			</tr>
 			<tr>
 				<td></td>
 				<td>出版社</td>
-				<td><input type="text" name="publisher"   value="<%=bookInfo.getPublisher()%>"/></td>
+				<td><input type="text" name="publisher"   value="<%=bookInfo.getPublisher()==null?"":bookInfo.getPublisher()%>"/></td>
 			</tr>
 			<tr>
 				<td></td>
 				<td>価格</td>
-				<td><input type="text" name="price"   value="<%=bookInfo.getPrice()%>"/></td>
+				<td><input type="text" name="price"   value="<%=bookInfo.getPrice()==null?"":bookInfo.getPrice()%>"/></td>
 			</tr>
 			<tr>
 				<td></td>
 				<td>ジャンル</td>
-				<td><input type="checkbox" name="genre" value="0"   <%=bookInfo.getGenre()[0]?"checked":"" %>/>文芸 
-				<input	type="checkbox" name="genre" value="1"   <%=bookInfo.getGenre()[1]?"checked":"" %>/>実用
-				<input type="checkbox" name="genre"  value="2"  <%=bookInfo.getGenre()[2]?"checked":"" %> />ビジネス 
-				<input type="checkbox" name="genre" 	value="3"   <%=bookInfo.getGenre()[3]?"checked":"" %>/>教養 
-				<input type="checkbox" name="genre" value="4"   <%=bookInfo.getGenre()[4]?"checked":"" %>/>趣味
+				<td><input type="checkbox" name="genre" value="0" <%=checkbox_checked[0] %>/>文芸 
+				<input	type="checkbox" name="genre" value="1"  		<%=checkbox_checked[1] %>/>実用
+				<input type="checkbox" name="genre"  value="2"  		<%=checkbox_checked[2] %> />ビジネス 
+				<input type="checkbox" name="genre" 	value="3"   	<%=checkbox_checked[3] %>/>教養 
+				<input type="checkbox" name="genre" value="4"   		<%=checkbox_checked[4] %>/>趣味
 				</td>
 			</tr>
 			<tr>
@@ -57,7 +63,7 @@ String errors = (String)request.getAttribute("errors");
 			<tr>
 				<td></td>
 				<td>備考</td>
-				<td><textarea name="remarks" cols="40" rows="4"><%=bookInfo.getRemarks()%></textarea></td>
+				<td><textarea name="remarks" cols="40" rows="4"><%=bookInfo.getRemarks()==null?"":bookInfo.getRemarks()%></textarea></td>
 			</tr>
 			<tr>
 				<td></td>

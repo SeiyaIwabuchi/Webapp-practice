@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="dataClasses.BookBean" %>
+<%@ page import="dataClasses.BookInformation" %>
 <%
-	BookBean bookInfo = (BookBean)request.getAttribute("bookInfo");
-if(bookInfo == null) bookInfo = new BookBean();
-String errors = (String)request.getAttribute("errors");
+	BookInformation bookInfo = (BookInformation)request.getAttribute("bookInfo");
+	if(bookInfo == null) bookInfo = new BookInformation();
+	String errors = (String)request.getAttribute("errors");
 %>
 <!DOCTYPE html>
 <html>

@@ -3,6 +3,7 @@
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Enumeration;
 import java.util.List;
 
@@ -29,13 +30,13 @@ public class AddPageLogicServlet2 extends HttpServlet {
 		boolean validateResult = validator.requiereCheck(params); //パラメータ数チェック
 		for(String paramName : params) validateResult = validator.requiereCheck(paramName, request.getParameterValues(paramName)) && validateResult;
 		//データ格納
-		dataClasses.BookBean bookInfo = new dataClasses.BookBean();
+		bean.BookBean bookInfo = new bean.BookBean();
 		bookInfo.setTitle(request.getParameter("title"));
-		bookInfo.setWriter(request.getParameter("writer"));
+		bookInfo.setWritter(request.getParameter("writer"));
 		bookInfo.setPublisher(request.getParameter("publisher"));
 		bookInfo.setRemarks(request.getParameter("remarks"));
 		try {
-			bookInfo.setPrice(Integer.parseInt(request.getParameter("price")));
+			bookInfo.setPrice(request.getParameter("price"));
 		}catch(NumberFormatException e){
 			
 		}
@@ -46,7 +47,7 @@ public class AddPageLogicServlet2 extends HttpServlet {
 				genre_checked[Integer.parseInt(s)] = true;
 			}
 		}
-		bookInfo.setGenre(genre_checked);
+		bookInfo.setGenreList(Arrays.asList(request.getParameterValues("genre")));
 		bookInfo.setStock(request.getParameter("stock").equals("0")?false:true);
 		bookInfo.setValidateResult(validateResult);
 		if(validateResult) {
