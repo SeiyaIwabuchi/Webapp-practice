@@ -149,7 +149,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="C:\Users\180453\Desktop\dev_lite\Webapp-practice\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\Users\180453\Desktop\dev_lite\Webapp-practice\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\12_orgclass" path="/12_orgclass" reloadable="true" source="org.eclipse.jst.jee.server:12_orgclass"/><Context docBase="C:\Users\180453\Desktop\dev_lite\Webapp-practice\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\11_dispatch" path="/11_dispatch" reloadable="true" source="org.eclipse.jst.jee.server:11_dispatch"/><Context docBase="C:\Users\180453\Desktop\dev_lite\Webapp-practice\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\10_addpagevalidate" path="/10_addpagevalidate" reloadable="true" source="org.eclipse.jst.jee.server:10_addpagevalidate"/></Host>
+      <Context docBase="C:\Users\180453\Desktop\dev_lite\Webapp-practice\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\Users\180453\Desktop\dev_lite\Webapp-practice\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\13_session" path="/13_session" reloadable="true" source="org.eclipse.jst.jee.server:13_session"/></Host>
     </Engine>
   </Service>
 </Server>

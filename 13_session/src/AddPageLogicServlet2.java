@@ -13,6 +13,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 @WebServlet("/getresult")
 public class AddPageLogicServlet2 extends HttpServlet {
@@ -22,6 +23,8 @@ public class AddPageLogicServlet2 extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		PrintWriter out = response.getWriter();
 		List<String> params = new ArrayList<String>();
+		//セッション取得
+		HttpSession sessoin = request.getSession();
 		//validate
 		validate.Validator validator = new validate.Validator();
 		for(Enumeration<String> e = request.getParameterNames(); e.hasMoreElements();) {
@@ -53,13 +56,15 @@ public class AddPageLogicServlet2 extends HttpServlet {
 		if(validateResult) {
 			//フォワード
 			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/greeting-out.jsp");//画面遷移準備
-			request.setAttribute("bookInfo", bookInfo);//入力情報を次の画面に引き継ぐ
+			sessoin.setAttribute("bookInfo", bookInfo);//入力情報を次の画面に引き継ぐ
+			validator.clearErrors(); //エラーをクリア
+			sessoin.setAttribute("errors", validator.getErrors().toString());//エラー表示も引き継ぐ
 			dispatcher.forward(request, response);
 		}else {
 			//out.println(validator.getErrors());
 			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/greeting-in.jsp");//画面遷移準備
-			request.setAttribute("bookInfo", bookInfo);//入力情報を次の画面に引き継ぐ
-			request.setAttribute("errors", validator.getErrors().toString());//エラー表示も引き継ぐ
+			sessoin.setAttribute("bookInfo", bookInfo);//入力情報を次の画面に引き継ぐ
+			sessoin.setAttribute("errors", validator.getErrors().toString());//エラー表示も引き継ぐ
 			dispatcher.forward(request, response);
 		}
 	}
