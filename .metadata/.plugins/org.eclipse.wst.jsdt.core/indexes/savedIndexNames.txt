@@ -1,5 +1,4 @@
 INDEX VERSION 1.4+C:\Users\180453\Desktop\dev_lite\Webapp-practice\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-1718792115.index
 1216348382.index
 1725312514.index
 2423031832.index
@@ -10,11 +9,8 @@ INDEX VERSION 1.4+C:\Users\180453\Desktop\dev_lite\Webapp-practice\.metadata\.pl
 1974869002.index
 630127794.index
 638139369.index
-208264836.index
 2368430938.index
-1835701627.index
+3290526662.index
 4022026354.index
-2602401392.index
 1655348140.index
-2522404649.index
-2040725967.index
+1718792115.index
