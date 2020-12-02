@@ -2,9 +2,11 @@
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
+import java.util.Arrays;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -19,16 +21,12 @@ public class AddPageLogicServlet2 extends HttpServlet {
 		response.setContentType("text/html; charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
 		PrintWriter out = response.getWriter();
-		List<String> params = new ArrayList<String>();
-		for(Enumeration<String> e = request.getParameterNames(); e.hasMoreElements();) {
-			params.add(e.nextElement());
-			for (String s : request.getParameterValues(params.get(params.size()-1))) {
-				//out.println(String.format("%s=%s<br>",params.get(params.size()-1),s));	
-			}
-		}
+		List<String> params = Arrays.asList(new String[]{"title","writer","publisher","price","genre","stock","remarks"});
 		boolean[] genre_checked = {false,false,false,false,false};
-		for (String s : request.getParameterValues("genre")) {
-			genre_checked[Integer.parseInt(s)] = true;
+		if(request.getParameterValues("genre") != null) {
+			for (String s : request.getParameterValues("genre")) {
+				genre_checked[Integer.parseInt(s)] = true;
+			}
 		}
 		String stock_checked = request.getParameter("stock");
 		out.println("<html>");

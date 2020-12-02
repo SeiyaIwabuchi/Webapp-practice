@@ -35,7 +35,7 @@ public class AddPageLogicServlet2 extends HttpServlet {
 		bookInfo.setPublisher(request.getParameter("publisher"));
 		bookInfo.setRemarks(request.getParameter("remarks"));
 		try {
-			bookInfo.setPrice(Integer.parseInt(request.getParameter("price")));
+			bookInfo.setPrice(request.getParameter("price"));
 		}catch(NumberFormatException e){
 			
 		}

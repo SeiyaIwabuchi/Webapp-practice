@@ -16,7 +16,7 @@ if(bookInfo.getGenreList() != null){
 <html>
 <head>
 <meta charset="UTF-8">
-<title>書籍登録画面</title>
+<title>書籍登録確認画面</title>
 </head>
 <body>
 	<h2>■書籍在庫管理システム</h2>

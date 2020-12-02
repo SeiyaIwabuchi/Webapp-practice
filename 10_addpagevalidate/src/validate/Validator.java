@@ -29,15 +29,18 @@ public class Validator {
 
 		}
 		if(paramName.equals("price")) {
+			String _para = params[0];
 			try {
-				int price = Integer.parseInt(params[0]);
+				int price = Integer.parseInt(_para);
 				if(price < 0) {
 					errors.append(createErrorHtml("価格は0以上です。"));
 					result = false;
 				}
 			}catch(NumberFormatException e) {
-				errors.append(createErrorHtml("価格は数値⼊⼒です。"));
-				result = false;
+				if(_para.equals("") == false) {
+					errors.append(createErrorHtml("価格は数値⼊⼒です。"));
+					result = false;
+				}
 			}
 		}
 		if(paramName.equals("genre")) {

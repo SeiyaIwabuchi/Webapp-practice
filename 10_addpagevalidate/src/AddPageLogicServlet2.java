@@ -60,7 +60,7 @@ public class AddPageLogicServlet2 extends HttpServlet {
 			out.println(" <tr><td></td><td>備考</td><td><textarea name=\"remarks\" cols=\"40\" rows=\"4\" disabled=\"disabled\">" + request.getParameter(params.get(6)) + "</textarea></td></tr>");
 			out.println(" <tr><td></td><td height=\"30\"></td><td></td></tr>");
 			out.println(" <tr><td></td><td></td><td align=\"right\">");
-			out.println(" <input type=\"submit\" value=\"キャンセル\" />");
+			//out.println(" <input type=\"submit\" value=\"キャンセル\" />");
 			out.println(" </table>");
 			out.println(" </form>");
 			out.println("</body>");

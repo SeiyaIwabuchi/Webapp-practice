@@ -5,7 +5,7 @@ public class BookInformation {
 	private String writer="";
 	private String publisher="";
 	private String remarks="";
-	private int price;
+	private String price = "";
 	private boolean[] genre = new boolean[5];
 	private boolean stock;
 	private boolean validateResult;
@@ -34,10 +34,10 @@ public class BookInformation {
 	public void setRemarks(String remarks) {
 		this.remarks = remarks;
 	}
-	public int getPrice() {
+	public String getPrice() {
 		return price;
 	}
-	public void setPrice(int price) {
+	public void setPrice(String price) {
 		this.price = price;
 	}
 	public boolean[] getGenre() {
