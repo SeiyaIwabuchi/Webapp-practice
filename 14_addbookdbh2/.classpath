@@ -13,5 +13,6 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="lib" path="C:/Users/180453/Desktop/dev_lite/h2/bin/h2-1.4.200.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

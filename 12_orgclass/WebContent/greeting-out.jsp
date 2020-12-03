@@ -21,7 +21,7 @@ if(bookInfo.getGenreList() != null){
 <body>
 	<h2>■書籍在庫管理システム</h2>
 	<h2><%=errors==null?"":errors %></h2>
-	<h3>【書籍登録画面】</h3>
+	<h3>【書籍登録確認画面】</h3>
 	<form action="<%=request.getContextPath()%>/getresult" method="post">
 		<table>
 			<tr>
