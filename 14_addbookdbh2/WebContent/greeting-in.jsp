@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ page import="bean.BookBean" %>
 <%@ page import="javax.servlet.http.HttpSession" %>
+<%@ page import = "java.sql.*" %>
 <%
 BookBean bookInfo = (BookBean)session.getAttribute("bookInfo");
 if(bookInfo == null) bookInfo = new BookBean();

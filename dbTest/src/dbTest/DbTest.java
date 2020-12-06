@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class DbTest {
-	private static String dbFileName = "C:/Users/180453/Desktop/dev_lite/h2/bin/kadai14db";
+	private static String dbFileName = "../../h2/bin/kadai14db";
 	private static String dbUser = "h2user";
 	private static String dbPass = "password";
 	private Connection conn = null;
