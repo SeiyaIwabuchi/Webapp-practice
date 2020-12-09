@@ -47,3 +47,5 @@
 2020-12-06 22:45:51,598 [Worker-51: Debug Source Lookup] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-catalina/9.0.19/tomcat-catalina-9.0.19-sources.jar
 2020-12-06 23:20:26,084 [Worker-76: Debug Source Lookup] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-juli/9.0.19/tomcat-juli-9.0.19-sources.jar
 2020-12-06 23:20:26,603 [Worker-76: Debug Source Lookup] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-juli/9.0.19/tomcat-juli-9.0.19-sources.jar
+2020-12-09 08:48:18,176 [Worker-4: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2020-12-09 08:48:46,409 [Worker-6: Auto share git projects] WARN  org.eclipse.jgit.util.FS_Win32 - null

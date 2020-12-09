@@ -38,6 +38,7 @@ public class DatabaseOperator {
 	public Connection getConnection() {
 		Connection conn = null;
 		try {
+			Class.forName("org.h2.Driver");
 			conn = DriverManager.getConnection("jdbc:h2:" + dbFileName , dbUser, dbPass);
 		}catch(Exception e) {
 			e.printStackTrace();
