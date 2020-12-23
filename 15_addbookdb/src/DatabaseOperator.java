@@ -4,7 +4,6 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class DatabaseOperator {
-//	private static String dbHost = "127.0.0.1";
 	private static String dbHost = "localhost";
 	private static String dbUser = "mysqluser";
 	private static String dbPass = "password";
@@ -60,13 +59,13 @@ public class DatabaseOperator {
 				smt = conn.createStatement();
 				smt.executeUpdate(
 						String.format(
-								"insert into kadai15.t_book values('%06d','%s','%s',%s,'%s','%b','%s')", 
+								"insert into kadai15.t_book values('%06d','%s','%s',%s,'%s','%d','%s')", 
 								id,
 								bookbean.getTitle(),
 								bookbean.getWritter(),
 								bookbean.getPrice(),
 								bookbean.getPublisher(),
-								bookbean.isStock(),
+								bookbean.isStock()==true?1:0,
 								bookbean.getRemarks()
 								));
 				result = true;
