@@ -20,6 +20,7 @@ public class AddPageLogicServlet2_Confirm extends HttpServlet {
 		HttpSession session = request.getSession();
 		bean.BookBean bookInfo = (bean.BookBean)session.getAttribute("bookInfo");
 		dbope.insertToBook(nextId, bookInfo);
+		dbope.insertToBookGenre(nextId, bookInfo);
 		out.println(String.format("<h1>èëê–Åu%sÅvÇìoò^ÇµÇ‹ÇµÇΩÅB<h1>", bookInfo.getTitle()));
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{

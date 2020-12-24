@@ -1,7 +1,16 @@
+/*
+ * t_bookgenreにデータを格納する。
+ * ジャンルIDを取得する。
+ * 方法２：bookbean.getGenre()のそれぞれの値を+1してfomart(%06d)で格納
+ */
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class DatabaseOperator {
 	private static String dbFileName = "../Webapp-practice/database/h2/kadai14db";
@@ -67,6 +76,34 @@ public class DatabaseOperator {
 								bookbean.isStock(),
 								bookbean.getRemarks()
 								));
+				result = true;
+			}catch(Exception e) {
+				e.printStackTrace();
+			}finally {
+				try {
+					if(smt != null) {smt.close();} //自分のケツは自分で拭う
+				}catch(Exception e) {e.printStackTrace();}
+				try {
+					if(conn != null) {conn.close();} //自分のケツは自分で拭う
+					System.out.println("Connection closed.");
+				}catch (Exception e) {e.printStackTrace();}
+			}
+		}
+	}
+	public void insertToBookGenre(int bookId,bean.BookBean bookbean) {
+		boolean result = false;
+		Connection conn = this.getConnection();
+		if(conn != null) {
+			try {
+				smt = conn.createStatement();
+				for(String genreId:bookbean.getGenreList()) {
+					int genreNumber = Integer.parseInt(genreId) + 1;
+					System.out.println(bookbean.getGenreList());
+					System.out.println(String.format("insert into t_bookgenre values('%06d','%06d')",bookId,genreNumber));
+					smt.executeUpdate(
+							String.format("insert into t_bookgenre values('%06d','%06d')",bookId,genreNumber)
+							);
+				}
 				result = true;
 			}catch(Exception e) {
 				e.printStackTrace();

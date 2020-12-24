@@ -82,6 +82,34 @@ public class DatabaseOperator {
 			}
 		}
 	}
+	public void insertToBookGenre(int bookId,bean.BookBean bookbean) {
+		boolean result = false;
+		Connection conn = this.getConnection();
+		if(conn != null) {
+			try {
+				smt = conn.createStatement();
+				for(String genreId:bookbean.getGenreList()) {
+					int genreNumber = Integer.parseInt(genreId) + 1;
+					System.out.println(bookbean.getGenreList());
+					System.out.println(String.format("insert into kadai15.t_bookgenre values('%06d','%06d')",bookId,genreNumber));
+					smt.executeUpdate(
+							String.format("insert into kadai15.t_bookgenre values('%06d','%06d')",bookId,genreNumber)
+							);
+				}
+				result = true;
+			}catch(Exception e) {
+				e.printStackTrace();
+			}finally {
+				try {
+					if(smt != null) {smt.close();} //自分のケツは自分で拭う
+				}catch(Exception e) {e.printStackTrace();}
+				try {
+					if(conn != null) {conn.close();} //自分のケツは自分で拭う
+					System.out.println("Connection closed.");
+				}catch (Exception e) {e.printStackTrace();}
+			}
+		}
+	}
 	public int getMaxBookId() {
 		int id = -1;
 		Connection conn = this.getConnection();
