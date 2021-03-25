@@ -1,5 +1,5 @@
 - 2_test_servlet サーブレットの動作確認
-<iframe src="http://test-env.eba-xjhshmsq.us-east-1.elasticbeanstalk.com/2_test_servlet/HelloServlet"></iframe>
+<a href="http://test-env.eba-xjhshmsq.us-east-1.elasticbeanstalk.com/2_test_servlet/HelloServlet">表示</a>
 
 - 3_status URL指定時にランダムでステータス(very good/bad/good/very bad）を表示
 <iframe src="http://test-env.eba-xjhshmsq.us-east-1.elasticbeanstalk.com/3_status/sts"></iframe>
