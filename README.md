@@ -2,7 +2,7 @@
 <a href="http://test-env.eba-xjhshmsq.us-east-1.elasticbeanstalk.com/2_test_servlet/HelloServlet">表示</a>
 
 - 3_status URL指定時にランダムでステータス(very good/bad/good/very bad）を表示
-<a href="http://test-env.eba-xjhshmsq.us-east-1.elasticbeanstalk.com/3_status/sts">ここから表示</a>
+<a href="http://test-env.eba-xjhshmsq.us-east-1.elasticbeanstalk.com/3_status/sts">表示</a>
 
 - 3_2_charcode 文字コードの設定 ・setContentTypeで文字コードUTF-8​、ファイル保存時の文字コードUTF-8​→文字化けなし setContetTypeで文字コードUTF-8​、ファイル保存時の文字コードShift-JIS​→文字化けあり
 <iframe src="http://test-env.eba-xjhshmsq.us-east-1.elasticbeanstalk.com/3_2_charcode/sts"></iframe>
